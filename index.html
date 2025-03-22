@@ -3,209 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumari Digital Mart</title>
-    <!-- Google Fonts -->
+    <title>Tamil Nadu Vehicle & License Verification</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
         }
-    </script>
+    </style>
 </head>
-<body class="font-poppins bg-gray-50">
+<body class="bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-md">
-        <nav class="container mx-auto px-6 py-4">
+    <header class="bg-blue-600 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-blue-600">
-                    <i class="fas fa-digital-tachograph mr-2"></i>
-                    Kumari Digital Mart
+                <div class="flex items-center">
+                    <i class="fas fa-car-side text-3xl mr-3"></i>
+                    <h1 class="text-2xl font-bold">Tamil Nadu Vehicle & License Verification</h1>
                 </div>
+                <nav>
+                    <a href="#" class="hover:text-blue-200 transition-colors">Help</a>
+                </nav>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Digital Solutions Hub</h1>
-            <p class="text-xl mb-8">Discover a world of digital services all in one place</p>
-        </div>
-    </section>
-
-    <!-- Search Section -->
-    <div class="container mx-auto px-6 py-8">
-        <div class="max-w-md mx-auto">
-            <div class="relative">
-                <input 
-                    type="text" 
-                    id="search-input"
-                    class="w-full px-4 py-3 rounded-lg shadow-sm border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                    placeholder="Search websites..."
-                    aria-label="Search websites"
-                >
-                <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-            </div>
-        </div>
-    </div>
-
-    <!-- Website Cards -->
-    <main class="container mx-auto px-6 py-8">
-        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Travel Tours Card -->
-            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="p-6">
-                    <div class="text-4xl text-blue-500 mb-4">
-                        <i class="fas fa-plane"></i>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Vehicle Registration Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-car text-3xl text-blue-600 mr-3"></i>
+                    <h2 class="text-xl font-semibold">Vehicle Registration Verification</h2>
+                </div>
+                <form id="vehicleForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="vehicleNumber">
+                            Vehicle Registration Number
+                        </label>
+                        <input type="text" id="vehicleNumber" 
+                               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               placeholder="Enter TN vehicle number (e.g., TN01AB1234)"
+                               pattern="^TN[0-9]{2}[A-Z]{2}[0-9]{4}$"
+                               required>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Travel Tours Planner</h3>
-                    <p class="text-gray-600 mb-4">Plan your perfect journey with our comprehensive travel planning tools. Get itineraries, bookings, and travel guides all in one place.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                    <button type="submit" 
+                            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search mr-2"></i>
+                        Verify Vehicle
+                    </button>
+                </form>
+                <div id="vehicleResult" class="mt-4 hidden">
+                    <!-- Results will be displayed here -->
                 </div>
             </div>
 
-            <!-- Land Registration Card -->
-            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="p-6">
-                    <div class="text-4xl text-blue-500 mb-4">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Land Registration Legal Analyser</h3>
-                    <p class="text-gray-600 mb-4">Streamline your land registration process with our legal analysis tools. Get expert guidance and documentation support.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+            <!-- License Verification Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-id-card text-3xl text-green-600 mr-3"></i>
+                    <h2 class="text-xl font-semibold">Driving License Verification</h2>
                 </div>
-            </div>
-
-            <!-- Electronics Store Card -->
-            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="p-6">
-                    <div class="text-4xl text-blue-500 mb-4">
-                        <i class="fas fa-tv"></i>
+                <form id="licenseForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="licenseNumber">
+                            Driving License Number
+                        </label>
+                        <input type="text" id="licenseNumber" 
+                               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="Enter TN license number (e.g., TN0120220001234)"
+                               required>
+                        <div class="mt-4">
+                            <label class="block text-gray-700 mb-2" for="dob">
+                                Date of Birth
+                            </label>
+                            <input type="date" id="dob" 
+                                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                                   required>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Electronics Store</h3>
-                    <p class="text-gray-600 mb-4">Shop the latest electronics and gadgets from top brands. Find amazing deals on laptops, smartphones, and more.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
-                </div>
-            </div>
-
-            <!-- Snacks & Bakery Card -->
-            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="p-6">
-                    <div class="text-4xl text-blue-500 mb-4">
-                        <i class="fas fa-cookie"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Snacks & Bakery</h3>
-                    <p class="text-gray-600 mb-4">Discover delicious snacks and freshly baked goods. Order your favorite treats from local bakeries and snack makers.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
-                </div>
-            </div>
-
-            <!-- Digital Marketing Card -->
-            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="p-6">
-                    <div class="text-4xl text-blue-500 mb-4">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Digital Marketing Services</h3>
-                    <p class="text-gray-600 mb-4">Boost your online presence with our comprehensive digital marketing solutions. SEO, social media, and content marketing services.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
-                </div>
-            </div>
-
-            <!-- Online Education Card -->
-            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="p-6">
-                    <div class="text-4xl text-blue-500 mb-4">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Online Education Platform</h3>
-                    <p class="text-gray-600 mb-4">Access quality education from anywhere. Browse courses, join live classes, and earn certifications in various fields.</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                    <button type="submit" 
+                            class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search mr-2"></i>
+                        Verify License
+                    </button>
+                </form>
+                <div id="licenseResult" class="mt-4 hidden">
+                    <!-- Results will be displayed here -->
                 </div>
             </div>
         </div>
 
-        <!-- No Results Message -->
-        <div id="no-results" class="hidden text-center py-8 text-gray-500">
-            No matching websites found
+        <!-- Information Section -->
+        <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">Important Information</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="flex items-start">
+                    <i class="fas fa-info-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="font-medium mb-2">Valid Format</h4>
+                        <p class="text-gray-600">Enter TN registration number (e.g., TN01AB1234)</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-shield-alt text-blue-600 text-xl mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="font-medium mb-2">Data Privacy</h4>
+                        <p class="text-gray-600">Your search data is secure and not stored</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-clock text-blue-600 text-xl mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="font-medium mb-2">Real-time Results</h4>
+                        <p class="text-gray-600">Get instant verification from official database</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <p class="mb-2">© 2024 Kumari Digital Mart. All rights reserved.</p>
-                <p class="text-gray-400">Your one-stop destination for digital services</p>
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p>&copy; 2024 Tamil Nadu Vehicle & License Verification Portal</p>
+                    <p class="text-gray-400 text-sm">Powered by Parivahan VAHAN & SARATHI</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('search-input');
-            const cards = document.querySelectorAll('.card');
-            const noResults = document.getElementById('no-results');
-            const cardsContainer = document.getElementById('cards-container');
+        // Vehicle Form Submission
+        document.getElementById('vehicleForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const vehicleNumber = document.getElementById('vehicleNumber').value;
+            const resultDiv = document.getElementById('vehicleResult');
+            
+            try {
+                // Show loading state
+                resultDiv.innerHTML = `
+                    <div class="flex items-center justify-center p-4">
+                        <i class="fas fa-spinner fa-spin text-blue-600 text-2xl"></i>
+                    </div>
+                `;
+                resultDiv.classList.remove('hidden');
 
-            searchInput.addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase();
-                let hasResults = false;
-
-                cards.forEach(card => {
-                    const title = card.querySelector('h3').textContent.toLowerCase();
-                    const description = card.querySelector('p').textContent.toLowerCase();
-                    
-                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                        card.style.display = 'block';
-                        hasResults = true;
-                    } else {
-                        card.style.display = 'none';
-                    }
+                // Format vehicle number (remove spaces)
+                const formattedVehicleNumber = vehicleNumber.replace(/\s/g, '');
+                
+                const response = await fetch('http://localhost:5000/api/vehicle', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        registrationNumber: formattedVehicleNumber
+                    })
                 });
 
-                // Toggle no results message
-                noResults.style.display = hasResults ? 'none' : 'block';
-                cardsContainer.style.display = hasResults ? 'grid' : 'none';
-            });
+                if (!response.ok) {
+                    throw new Error('Failed to fetch vehicle details');
+                }
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <div class="p-4 border rounded-lg bg-blue-50">
+                        <h3 class="font-semibold text-lg mb-2">Vehicle Details</h3>
+                        <div class="space-y-2">
+                            <p class="text-gray-700"><span class="font-medium">Registration Number:</span> ${data.registrationNumber}</p>
+                            <p class="text-gray-700"><span class="font-medium">Owner Name:</span> ${data.ownerName}</p>
+                            <p class="text-gray-700"><span class="font-medium">Registration Date:</span> ${data.registrationDate}</p>
+                            <p class="text-gray-700"><span class="font-medium">Vehicle Class:</span> ${data.vehicleClass}</p>
+                            <p class="text-gray-700"><span class="font-medium">Fuel Type:</span> ${data.fuelType}</p>
+                            <p class="text-gray-700"><span class="font-medium">Make:</span> ${data.makerName}</p>
+                            <p class="text-gray-700"><span class="font-medium">Model:</span> ${data.modelName}</p>
+                            <p class="text-gray-700"><span class="font-medium">Status:</span> 
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">${data.status}</span>
+                            </p>
+                            <p class="text-gray-700"><span class="font-medium">Tax Valid Till:</span> ${data.taxValidUpto}</p>
+                            <p class="text-gray-700"><span class="font-medium">Insurance Valid Till:</span> ${data.insuranceValidUpto}</p>
+                            <p class="text-gray-700"><span class="font-medium">Fitness Valid Till:</span> ${data.fcValidUpto}</p>
+                            <p class="text-gray-700"><span class="font-medium">PUC Valid Till:</span> ${data.pucValidUpto}</p>
+                            <p class="text-gray-700"><span class="font-medium">RC Status:</span> ${data.rcStatus}</p>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="p-4 border rounded-lg bg-red-50 text-red-700">
+                        <p>Error: Unable to fetch vehicle details. Please try again later.</p>
+                    </div>
+                `;
+            }
+        });
+
+        // License Form Submission
+        document.getElementById('licenseForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const licenseNumber = document.getElementById('licenseNumber').value;
+            const dob = document.getElementById('dob').value;
+            const resultDiv = document.getElementById('licenseResult');
+            
+            try {
+                // Show loading state
+                resultDiv.innerHTML = `
+                    <div class="flex items-center justify-center p-4">
+                        <i class="fas fa-spinner fa-spin text-green-600 text-2xl"></i>
+                    </div>
+                `;
+                resultDiv.classList.remove('hidden');
+
+                // Format license number (remove spaces and hyphens)
+                const formattedLicenseNumber = licenseNumber.replace(/[\s-]/g, '');
+                
+                // Format date to dd-mm-yyyy
+                const formattedDob = new Date(dob).toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                }).split('/').join('-');
+                
+                const response = await fetch('http://localhost:5000/api/license', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        licenseNumber: formattedLicenseNumber,
+                        dob: formattedDob
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch license details');
+                }
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <div class="p-4 border rounded-lg bg-green-50">
+                        <h3 class="font-semibold text-lg mb-2">License Details</h3>
+                        <div class="space-y-2">
+                            <p class="text-gray-700"><span class="font-medium">License Number:</span> ${data.dlNumber}</p>
+                            <p class="text-gray-700"><span class="font-medium">Holder Name:</span> ${data.holderName}</p>
+                            <p class="text-gray-700"><span class="font-medium">Father's Name:</span> ${data.fatherName}</p>
+                            <p class="text-gray-700"><span class="font-medium">Date of Issue:</span> ${data.issueDate}</p>
+                            <p class="text-gray-700"><span class="font-medium">Valid From:</span> ${data.validFrom}</p>
+                            <p class="text-gray-700"><span class="font-medium">Valid Upto:</span> ${data.validUpto}</p>
+                            <p class="text-gray-700"><span class="font-medium">Vehicle Classes:</span> ${data.vehicleClass.join(", ")}</p>
+                            <p class="text-gray-700"><span class="font-medium">Issuing Authority:</span> ${data.issuingAuthority}</p>
+                            <p class="text-gray-700"><span class="font-medium">Status:</span> 
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">${data.status}</span>
+                            </p>
+                            <p class="text-gray-700"><span class="font-medium">Blood Group:</span> ${data.bloodGroup}</p>
+                            <p class="text-gray-700"><span class="font-medium">Address:</span> ${data.permanentAddress}</p>
+                            <p class="text-gray-700"><span class="font-medium">Badge Number:</span> ${data.badgeNumber || 'N/A'}</p>
+                            <p class="text-gray-700"><span class="font-medium">Last Transaction:</span> ${data.lastTransactionAt}</p>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="p-4 border rounded-lg bg-red-50 text-red-700">
+                        <p>Error: Unable to fetch license details. Please try again later.</p>
+                    </div>
+                `;
+            }
+        });
+
+        // Form validation
+        document.getElementById('vehicleNumber').addEventListener('input', (e) => {
+            e.target.value = e.target.value.toUpperCase();
+        });
+
+        document.getElementById('licenseNumber').addEventListener('input', (e) => {
+            e.target.value = e.target.value.toUpperCase();
         });
     </script>
 </body>
 </html>
-</create_file>
-
-I've created a modern, responsive website using Tailwind CSS that includes:
-1. A clean header with the Kumari Digital Mart logo
-2. A hero section with a gradient background
-3. A search box that filters website cards in real-time
-4. Six website cards with different services, each featuring:
-   - An appropriate Font Awesome icon
-   - A title
-   - A description
-   - A "Visit Site" button
-5. A footer with copyright information
-6. Real-time search functionality that filters cards as you type
-
-Let's test the website to ensure everything works as expected.
-
-<execute_command>
-<command>python3 -m http.server 8000</command>
-</execute_command>
-
-Now, I'll use the browser action to verify the website's appearance and functionality.
-
-<browser_action>
-<action>launch</action>
-<url>http://localhost:8000/index.html</url>
-</browser_action>
