@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumari Digital Mart</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-600">
+                    <i class="fas fa-digital-tachograph mr-2"></i>
+                    Kumari Digital Mart
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Digital Solutions Hub</h1>
+            <p class="text-xl mb-8">Discover a world of digital services all in one place</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <div class="container mx-auto px-6 py-8">
+        <div class="max-w-md mx-auto">
+            <div class="relative">
+                <input 
+                    type="text" 
+                    id="search-input"
+                    class="w-full px-4 py-3 rounded-lg shadow-sm border border-gray-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                    placeholder="Search websites..."
+                    aria-label="Search websites"
+                >
+                <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Website Cards -->
+    <main class="container mx-auto px-6 py-8">
+        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Travel Tours Card -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Travel Tours Planner</h3>
+                    <p class="text-gray-600 mb-4">Plan your perfect journey with our comprehensive travel planning tools. Get itineraries, bookings, and travel guides all in one place.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Land Registration Card -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Land Registration Legal Analyser</h3>
+                    <p class="text-gray-600 mb-4">Streamline your land registration process with our legal analysis tools. Get expert guidance and documentation support.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Electronics Store Card -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Electronics Store</h3>
+                    <p class="text-gray-600 mb-4">Shop the latest electronics and gadgets from top brands. Find amazing deals on laptops, smartphones, and more.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Snacks & Bakery Card -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Snacks & Bakery</h3>
+                    <p class="text-gray-600 mb-4">Discover delicious snacks and freshly baked goods. Order your favorite treats from local bakeries and snack makers.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Digital Marketing Card -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Digital Marketing Services</h3>
+                    <p class="text-gray-600 mb-4">Boost your online presence with our comprehensive digital marketing solutions. SEO, social media, and content marketing services.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Online Education Card -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Online Education Platform</h3>
+                    <p class="text-gray-600 mb-4">Access quality education from anywhere. Browse courses, join live classes, and earn certifications in various fields.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">Visit Site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-8 text-gray-500">
+            No matching websites found
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p class="mb-2">© 2024 Kumari Digital Mart. All rights reserved.</p>
+                <p class="text-gray-400">Your one-stop destination for digital services</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const cards = document.querySelectorAll('.card');
+            const noResults = document.getElementById('no-results');
+            const cardsContainer = document.getElementById('cards-container');
+
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                let hasResults = false;
+
+                cards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Toggle no results message
+                noResults.style.display = hasResults ? 'none' : 'block';
+                cardsContainer.style.display = hasResults ? 'grid' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
+</create_file>
+
+I've created a modern, responsive website using Tailwind CSS that includes:
+1. A clean header with the Kumari Digital Mart logo
+2. A hero section with a gradient background
+3. A search box that filters website cards in real-time
+4. Six website cards with different services, each featuring:
+   - An appropriate Font Awesome icon
+   - A title
+   - A description
+   - A "Visit Site" button
+5. A footer with copyright information
+6. Real-time search functionality that filters cards as you type
+
+Let's test the website to ensure everything works as expected.
+
+<execute_command>
+<command>python3 -m http.server 8000</command>
+</execute_command>
+
+Now, I'll use the browser action to verify the website's appearance and functionality.
+
+<browser_action>
+<action>launch</action>
+<url>http://localhost:8000/index.html</url>
+</browser_action>
